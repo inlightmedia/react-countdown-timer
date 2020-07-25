@@ -12,7 +12,9 @@ To use this timer, just pass in an ISO8601 formatted dateTime string.
 
 For example:
 > Some accepted ISO8601 formats:
+>
 > 2020-07-25T21:22:19Z (with UTC offset)
+>
 > 2020-08-27T23:12:15-04:00 (with timezone offset)
 
 ```jsx
