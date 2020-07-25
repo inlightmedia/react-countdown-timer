@@ -1,7 +1,5 @@
 # React Countdown Timer
 
-
-  
 ## Usage
 
 `yarn add @inlightmedia/react-countdown-timer`
@@ -10,33 +8,16 @@ Or
 
 `npm install @inlightmedia/react-countdown-timer`
 
-1. Start example and start coding - `yarn start`
+To use this timer, just pass in an ISO8601 formatted dateTime string.
 
-2. Run tests - `yarn test`
+For example:
+> Some accepted ISO8601 formats:
+> 2020-07-25T21:22:19Z (with UTC offset)
+> 2020-08-27T23:12:15-04:00 (with timezone offset)
 
-3. Bundle with - `yarn build`
-
-4. To test if it works correctly in another project you can use npm `npm install -S ../react-typescript-npm-package-boilerplate` Note the relative path
-
-E.g. this folder structure
-
+```jsx
+<CountDownTimer countdownDateTime="20-07-25T21:22:19Z">
 ```
-    ./workspace/
-        MyProject
-        react-typescript-npm-package-boilerplate
-```
-
-## Extra
-
-Adjust your `.eslintrc` config file to your own preference.
-
-## NPM equivalent
-
-yarn | npm
----- | ---
-`yarn` | `npm install`
-`yarn test` | `npm run test`
-`yarn build` | `npm run build`
 
 ## License
 
