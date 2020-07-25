@@ -1,3 +1,3 @@
-import CountDownThenUp from './CountDownThenUp';
+import CountDownTimer from './CountDownTimer';
 
-export default CountDownThenUp;
+export default CountDownTimer;

@@ -1,7 +1,7 @@
 {
-  "name": "react-typescript-npm-package-boilerplate",
+  "name": "react-countdown-timer",
   "version": "1.0.0",
-  "description": "Boilerplate to quickstart React-Typescript component development",
+  "description": "A React component that counts down to a given ISO date time and then counts up after reaching that time.",
   "main": "./dist/index.js",
   "scripts": {
     "build": "webpack --config webpack.config.babel.ts",

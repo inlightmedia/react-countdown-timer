@@ -5832,7 +5832,7 @@ var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_)
 var moment = __webpack_require__(1);
 var moment_default = /*#__PURE__*/__webpack_require__.n(moment);
 
-// CONCATENATED MODULE: ./src/CountDownThenUp/CountDownThenUp.tsx
+// CONCATENATED MODULE: ./src/CountDownTimer/CountDownTimer.tsx
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5849,11 +5849,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var CountDownThenUp_getCountDownTime = function getCountDownTime() {
+var CountDownTimer_getCountDownTime = function getCountDownTime() {
   return moment_default()().add(10, 'seconds');
 };
 
-var CountDownThenUp_CountDownUp = function CountDownUp(_ref) {
+var CountDownTimer_CountDownUp = function CountDownUp(_ref) {
   var _ref$shouldShowOverag = _ref.shouldShowOverageTime,
       shouldShowOverageTime = _ref$shouldShowOverag === void 0 ? true : _ref$shouldShowOverag;
 
@@ -5883,7 +5883,7 @@ var CountDownThenUp_CountDownUp = function CountDownUp(_ref) {
       setCountDownTimeElapsed = _useState10[1];
 
   Object(external_react_["useEffect"])(function () {
-    setCountDownTime(CountDownThenUp_getCountDownTime());
+    setCountDownTime(CountDownTimer_getCountDownTime());
   }, []);
   var clockInterval = setInterval(function () {
     if (countDownTime) {
@@ -5908,13 +5908,13 @@ var CountDownThenUp_CountDownUp = function CountDownUp(_ref) {
   }, hour < 10 ? "0".concat(hour) : hour, ":", minute < 10 ? "0".concat(minute) : minute, ":", second < 10 ? "0".concat(second) : second);
 };
 
-/* harmony default export */ var CountDownThenUp = (CountDownThenUp_CountDownUp);
-// CONCATENATED MODULE: ./src/CountDownThenUp/index.ts
+/* harmony default export */ var CountDownTimer = (CountDownTimer_CountDownUp);
+// CONCATENATED MODULE: ./src/CountDownTimer/index.ts
 
-/* harmony default export */ var src_CountDownThenUp = (CountDownThenUp);
+/* harmony default export */ var src_CountDownTimer = (CountDownTimer);
 // CONCATENATED MODULE: ./src/index.ts
 
-/* harmony default export */ var src = __webpack_exports__["default"] = (src_CountDownThenUp);
+/* harmony default export */ var src = __webpack_exports__["default"] = (src_CountDownTimer);
 
 /***/ })
 /******/ ]);
