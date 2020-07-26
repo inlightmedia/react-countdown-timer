@@ -24,13 +24,7 @@ For example:
 ```
 
 ## Optional Properties
-shouldShowOverageTimer?: boolean;
-  countDownDateTime: string;
-  elapsedTimeColor?: string;
-  shouldShowTimeUnits?: boolean;
-  shouldShowSeparator?: boolean;
-  shouldHidePrecedingZeros?: boolean;
-  style?: object;
+
 | Option                   | Description             | Default Value | Type |
 |--------------------------|-------------------------|---------------|------|
 | shouldShowOverageTimer   | If true, the counter will turn into a count-up timer when the count-down reaches zero   | true | boolean |
