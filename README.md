@@ -41,6 +41,10 @@ Just pass in a dateTime prop with an ISO 8601 formatted time string and you'll g
 | shouldHidePrecedingZeros            | If true, seconds, minutes, hours, and days will show preceding zeros (e.g. 003:02:02:05)                         | true    | boolean |
 | style                               | A style object can be passed in for inline css styles to be applied to the time text paragraph tag               | {}      | object  |
 
+The same component as above but with some different options:
+
+![options-demo-image](./README-OPTION-DEMO.gif)
+
 ## License
 
 MIT © Joshua Dyck
