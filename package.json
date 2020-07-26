@@ -1,5 +1,5 @@
 {
-  "name": "react-countdown-timer",
+  "name": "@inlightmedia/react-countdown-timer",
   "version": "1.0.0",
   "description": "A React component that counts down to a given ISO 8601 date/time, counts up from a given ISO 8601 date/time or counts down then counts up after the count down completes.",
   "main": "./dist/index.js",

@@ -110,7 +110,7 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
           }
           { shouldShowSeparator ? ':' : ' '}
           {
-            second && second < 10 
+            second && second < 10 && !shouldHidePrecedingZeros
               ? `0${second}${shouldShowTimeUnits ? 's' : ''}` 
               : `${second}${shouldShowTimeUnits ? 's' : ''}` 
           }
