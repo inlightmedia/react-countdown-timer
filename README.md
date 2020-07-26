@@ -43,7 +43,7 @@ Just pass in a dateTime prop with an ISO 8601 formatted time string and you'll g
 
 The same component as above but with some different options:
 
-![options-demo-image](./README-OPTION-DEMO.gif)
+![options-demo-image](./README-OPTIONS-DEMO.gif)
 
 ## License
 
