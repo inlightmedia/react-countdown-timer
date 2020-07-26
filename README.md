@@ -19,7 +19,7 @@ Just pass in a dateTime prop with an ISO 8601 formatted time string and you'll g
 ```
 
 > Note: To use this countdown/timer, you'll need to use an ISO 8601 formatted dateTime string.
-
+>
 > This format uses: `<year>-<month>-<day>T<hour>:<minute>:<second><offset>`
 >
 > Offset is the relative time difference from UTC/GMT. The vast majority of time, using Z, which means zero offset is a safe and easy choice with this component.
