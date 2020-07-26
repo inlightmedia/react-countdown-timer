@@ -1,7 +1,7 @@
 {
   "name": "react-countdown-timer",
   "version": "1.0.0",
-  "description": "A React component that counts down to a given ISO date time and then counts up after reaching that time.",
+  "description": "A React component that counts down to a given ISO 8601 date/time, counts up from a given ISO 8601 date/time or counts down then counts up after the count down completes.",
   "main": "./dist/index.js",
   "scripts": {
     "build": "webpack --config webpack.config.babel.ts",
