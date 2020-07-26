@@ -9,8 +9,8 @@ const Example = () => {
         shouldShowSeparator={false}
         shouldShowTimeUnits={true}
         shouldHidePrecedingZeros={true}
-        elapsedTimeColor="rgb(255, 0, 0)" 
-        countDownDateTime="2022-08-25T23:19:19Z" 
+        timerTextColor="rgb(255, 0, 0)" 
+        dateTime="2022-08-25T23:19:19Z" 
       />
     </div>
   );

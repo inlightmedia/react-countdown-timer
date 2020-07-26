@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import moment, { Moment } from 'moment'
 
 interface ComponentProps {
-  shouldShowOverageTimer?: boolean;
-  countDownDateTime: string;
-  elapsedTimeColor?: string;
+  shouldSwitchToTimerAfterCountdown?: boolean;
+  dateTime: string;
+  timerTextColor?: string;
   shouldShowTimeUnits?: boolean;
   shouldShowSeparator?: boolean;
   shouldHidePrecedingZeros?: boolean;
@@ -14,9 +14,9 @@ interface ComponentProps {
 }
 
 const CountDownUp: React.FunctionComponent<ComponentProps> = ({ 
-  shouldShowOverageTimer = true,
-  countDownDateTime,
-  elapsedTimeColor = 'red',
+  shouldSwitchToTimerAfterCountdown = true,
+  dateTime,
+  timerTextColor = 'red',
   shouldShowTimeUnits = false,
   shouldShowSeparator=true,
   shouldHidePrecedingZeros=false,
@@ -33,9 +33,9 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
   useEffect(() => {
     const ISO8601RegEx = /(\d{4})-(0[1-9]|1[0-2]|[1-9])-(\3([12]\d|0[1-9]|3[01])|[1-9])[tT\s]([01]\d|2[0-3]):(([0-5]\d)|\d):(([0-5]\d)|\d)([.,]\d+)?([zZ]|([+-])([01]\d|2[0-3]|\d):(([0-5]\d)|\d))$/;
     
-    if (ISO8601RegEx.test(countDownDateTime)) {
-      if (moment(countDownDateTime).isValid()) {
-        setCountDownTime(moment(countDownDateTime));
+    if (ISO8601RegEx.test(dateTime)) {
+      if (moment(dateTime).isValid()) {
+        setCountDownTime(moment(dateTime));
       } else {
         console.error('Error: Expected valid date. The date supplied conforms to ISO 8601 but is not a real date.')
       }
@@ -61,7 +61,7 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
     }
   }, 1000);
   
-  if (!shouldShowOverageTimer && countDownTime && countDownTime.isAfter(moment())) {
+  if (!shouldSwitchToTimerAfterCountdown && countDownTime && countDownTime.isAfter(moment())) {
     clearInterval(clockInterval);
   }
 
@@ -74,7 +74,7 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
         <p 
           className="main" 
           style={{ 
-            color: countDownTimeElapsed ? elapsedTimeColor : 'white',
+            color: countDownTimeElapsed ? timerTextColor : 'white',
             ...style
           }}
         >
