@@ -6,13 +6,13 @@
 
 `yarn add @inlightmedia/react-countdown-timer`
 
-Or
+or
 
 `npm install @inlightmedia/react-countdown-timer`
 
 ## Basic Usage
 
-Just pass in a dateTime prop with an ISO 8601 formatted time string and you'll get all the default functionality out-of-the-box. If you use a future date and time it will count down. If you use a past date and time it will count up. By default, when if finishes counting down it will begin to count up.
+Just pass in a dateTime prop with an ISO 8601 formatted time string and you'll get all the default functionality out-of-the-box. If you use a future date and time it will count down. If you use a past date and time it will count up. By default, when it finishes counting down it will begin to count up.
 
 ```jsx
 <CountDownTimer dateTime="20-07-25T21:22:19Z">
