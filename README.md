@@ -17,9 +17,28 @@ For example:
 >
 > 2020-08-27T23:12:15-04:00 (with timezone offset)
 
+### Basic Usage
+
 ```jsx
 <CountDownTimer countdownDateTime="20-07-25T21:22:19Z">
 ```
+
+## Optional Properties
+shouldShowOverageTimer?: boolean;
+  countDownDateTime: string;
+  elapsedTimeColor?: string;
+  shouldShowTimeUnits?: boolean;
+  shouldShowSeparator?: boolean;
+  shouldHidePrecedingZeros?: boolean;
+  style?: object;
+| Option                   | Description             | Default Value | Type |
+|--------------------------|-------------------------|---------------|------|
+| shouldShowOverageTimer   | If true, the counter will turn into a count-up timer when the count-down reaches zero   | true | boolean |
+| elapsedTimeColor         | Colour with which to display the count-up timer text  | 'red' | string |
+| shouldShowTimeUnits      | If true, this will show a letter representing the time unit after its respective number (e.g. 55m or 10h or 55s) | false | boolean |
+| shouldShowSeparator      | If true, this will show the colon between time units. If false, a space will be used | true | boolean |
+| shouldHidePrecedingZeros | If true, seconds, minutes, hours, and days will show preceding zeros (e.g. 003:02:02:05) | true | boolean |
+| style                    | A style object can be passed in for inline css styles to be applies to the time text paragraph tag | {} | object |
 
 ## License
 

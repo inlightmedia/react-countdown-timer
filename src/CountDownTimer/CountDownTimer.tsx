@@ -9,6 +9,7 @@ interface ComponentProps {
   elapsedTimeColor?: string;
   shouldShowTimeUnits?: boolean;
   shouldShowSeparator?: boolean;
+  shouldHidePrecedingZeros?: boolean;
   style?: object;
 }
 
