@@ -19,7 +19,7 @@ Just pass in a dateTime prop with an ISO 8601 formatted time string and you'll g
 ```
 
 > Note: To use this countdown/timer, you'll need to use an ISO 8601 formatted dateTime string.
-
+>
 > Examples:
 >
 > 2020-07-25T21:22:19Z (with UTC offset)
