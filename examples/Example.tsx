@@ -7,9 +7,10 @@ const Example = () => {
     <div style={{ backgroundColor:'rgb(50,50,50)', fontSize: '4em', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <CountDownTimer 
         shouldShowSeparator={false}
-        shouldShowTimeUnits={true} 
+        shouldShowTimeUnits={true}
+        shouldHidePrecedingZeros={true}
         elapsedTimeColor="rgb(255, 0, 0)" 
-        countDownDateTime="2020-08-25T23:19:19Z" 
+        countDownDateTime="2022-08-25T23:19:19Z" 
       />
     </div>
   );
