@@ -6,17 +6,24 @@ import moment, { Moment } from 'moment'
 interface ComponentProps {
   shouldShowOverageTimer?: boolean;
   countDownDateTime: string;
+  elapsedTimeColor?: string;
+  shouldShowTimeUnits?: boolean;
+  shouldShowSeparator?: boolean;
   style?: object;
 }
 
 const CountDownUp: React.FunctionComponent<ComponentProps> = ({ 
   shouldShowOverageTimer = true,
   countDownDateTime,
+  elapsedTimeColor = 'red',
+  shouldShowTimeUnits = false,
+  shouldShowSeparator=true,
   style,
 }) => {
-  const [hour, setHour] = useState<number>(0);
-  const [minute, setMinute] = useState<number>(0);
-  const [second, setSecond] = useState<number>(0);
+  const [day, setDay] = useState<number>();
+  const [hour, setHour] = useState<number>();
+  const [minute, setMinute] = useState<number>();
+  const [second, setSecond] = useState<number>();
   const [countDownTime, setCountDownTime] = useState<Moment>();
   const [countDownTimeElapsed, setCountDownTimeElapsed] = useState<boolean>(false);
 
@@ -36,14 +43,16 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
   
   const clockInterval = setInterval(() => {
     if (countDownTime) {
+      const daysLeft = countDownTime.diff(moment(), 'days') % 365;
       const hoursLeft = countDownTime.diff(moment(), 'hours') % 24;
       const minutesLeft = countDownTime.diff(moment(), 'minutes') % 60;
       const secondsLeft = countDownTime.diff(moment(), 'seconds') % 60;
       
       setHour((hoursLeft < 0 ? hoursLeft * -1 : hoursLeft))
+      setDay((daysLeft < 0 ? daysLeft * -1 : daysLeft))
       setMinute(minutesLeft < 0 ? minutesLeft * -1 : minutesLeft)
       setSecond(secondsLeft < 0 ? secondsLeft * -1 : secondsLeft)
-      setCountDownTimeElapsed(secondsLeft < 0);
+      setCountDownTimeElapsed(secondsLeft < 0 || minutesLeft < 0 || hoursLeft < 0);
     }
   }, 1000);
   
@@ -52,19 +61,25 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
   }
 
   return (
-    <p 
-      className="main" 
-      style={{ 
-        fontSize: '1em', 
-        display: 'flex', 
-        justifyContent: 'center', 
-        alignItems: 'center',
-        color: countDownTimeElapsed ? 'red' : 'white',
-        ...style
-      }}
-    >
-      { hour < 10 ? `0${hour}`: hour}:{minute < 10 ? `0${minute}` : minute}:{second < 10 ? `0${second}` : second }
-    </p>
+    <React.Fragment>
+      {
+        hour !== undefined &&
+        minute !== undefined &&
+        second !== undefined &&
+        <p 
+          className="main" 
+          style={{ 
+            color: countDownTimeElapsed ? elapsedTimeColor : 'white',
+            ...style
+          }}
+        >
+          {(day && day > 0 && day < 100) ? (day && day < 10 ? `00${day}d${ shouldShowSeparator ? ':' : ' '}` : `0${day}${day && shouldShowTimeUnits ? 'd' : ''}${ shouldShowSeparator ? ':' : ' '}`) : (day ? `${day}${shouldShowTimeUnits ? 'd' : ''}${ day && shouldShowSeparator ? ':' : ''}` : '' ) }
+          {hour && hour < 10 ? `0${hour}${shouldShowTimeUnits ? 'h' : ''}`:`${hour}${shouldShowTimeUnits ? 'h' : ''}`}
+          { shouldShowSeparator ? ':' : ' '}{minute && minute < 10 ? `0${minute}${shouldShowTimeUnits ? 'm' : ''}` : `${minute}${shouldShowTimeUnits ? 'm' : ''}`}
+          { shouldShowSeparator ? ':' : ' '}{second && second < 10 ? `0${second}${shouldShowTimeUnits ? 's' : ''}` : `${second}${shouldShowTimeUnits ? 's' : ''}` }
+        </p>
+      }
+    </React.Fragment>
   );
 }
 
