@@ -1,5 +1,7 @@
 # React Countdown Timer
 
+![demo-image](./README-DEMO.gif)
+
 ## Usage
 
 `yarn add @inlightmedia/react-countdown-timer`
