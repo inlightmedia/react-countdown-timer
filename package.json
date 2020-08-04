@@ -4,6 +4,8 @@
   "version": "1.0.3",
   "description": "A React component that counts down to a given ISO 8601 date/time, counts up from a given ISO 8601 date/time or counts down then counts up after the count down completes.",
   "main": "./dist/index.js",
+  "license": "MIT",
+  "url": "https://github.com/inlightmedia/react-countdown-timer",
   "scripts": {
     "build": "webpack --config webpack.config.babel.ts",
     "build-examples": "webpack --config examples/webpack.config.babel.ts --progress",
