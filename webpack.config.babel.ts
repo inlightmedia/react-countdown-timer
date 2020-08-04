@@ -11,7 +11,7 @@ export default () => ({
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].ts',
+    filename: '[name].js',
     library: packageJson.name,
     libraryTarget: 'umd',
     globalObject: 'this'
@@ -20,7 +20,7 @@ export default () => ({
   module: {
     rules: [
       {
-        test: /.tsx?$/,
+        test: /\.(js|jsx|tsx|ts)$/,
         exclude: /node_modules/,
         include: path.join(__dirname, 'src'),
         use: [

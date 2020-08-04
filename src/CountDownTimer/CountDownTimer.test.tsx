@@ -5,7 +5,7 @@ import CountDownTimer from './index';
 
 describe('CountDownTimer', () => {
   it('renders without crashing', () => {
-    const {container } = render(<CountDownTimer dateTime="2020-07-25T21:22:19Z"/>)
+    const { container } = render(<CountDownTimer dateTime="2020-07-25T21:22:19Z"/>)
     expect(container).toBeTruthy();
   });
 });
