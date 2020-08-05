@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CountDownTimer from '../src/index';
+import CountDownTimer from '../dist/src/index';
 
 const Example = () => {
   return (

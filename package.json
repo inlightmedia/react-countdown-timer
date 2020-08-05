@@ -1,21 +1,39 @@
 {
   "name": "@inlightmedia/react-countdown-timer",
-  "keywords": ["react", "countdown", "timer", "clock", "typescript"],
+  "keywords": [
+    "react",
+    "countdown",
+    "timer",
+    "clock",
+    "typescript"
+  ],
   "version": "1.0.6",
   "description": "A React component that counts down to a given ISO 8601 date/time, counts up from a given ISO 8601 date/time or counts down then counts up after the count down completes.",
   "main": "./dist/index.js",
   "license": "MIT",
-  "url": "https://github.com/inlightmedia/react-countdown-timer",
+  "author": {
+    "name": "Joshua Dyck",
+    "email": "josh.dyck@inlightmedia.ca"
+  },
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inlightmedia/react-countdown-timer"
+  },
   "scripts": {
-    "build": "webpack --config webpack.config.babel.ts",
-    "build-examples": "webpack --config examples/webpack.config.babel.ts --progress",
+    "build": "tsc",
+    "lint": "eslint './src/**/*.{js,ts,tsx}'",
+    "build-examples": "npm run build && webpack --config examples/webpack.config.babel.ts --progress",
+    "prepublish": "yarn run clean && yarn test && yarn build",
+    "===TESTING SCRIPTS===": "",
+    "test:watch": "jest --watchAll",
     "clean": "rm -rf dist coverage",
     "coverage": "jest --coverage",
-    "lint": "eslint ./src/*.*",
-    "prepublish": "npm run clean && npm run test && npm run build",
-    "start": "webpack-dev-server --config examples/webpack.config.live.babel.ts",
     "test": "npm run lint && npm run coverage"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
@@ -29,8 +47,8 @@
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "@types/webpack-env": "^1.15.2",
-    "@typescript-eslint/eslint-plugin": "^3.7.0",
-    "@typescript-eslint/parser": "^3.7.0",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^26.1.0",
     "babel-loader": "^8.0.4",
@@ -47,7 +65,7 @@
     "react": "^16.13.1",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^16.6.0",
-    "react-hot-loader": "next",
+    "react-hot-loader": "^4.12.21",
     "react-test-renderer": "^16.0.0",
     "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.0.1",

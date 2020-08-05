@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   // eslint-disable-next-line no-unused-vars
-  process(src: any, filename: any, config: any, options: any) {
+  process(_src: any, filename: any, _config: any, _options: any) {
     return 'module.exports = ' + JSON.stringify(path.basename(filename)) + ';';
   }
 };
