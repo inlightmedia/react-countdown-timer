@@ -1,15 +1,18 @@
 {
   "name": "@inlightmedia/react-countdown-timer",
-  "description": "countdown",
-  "version": "0.0.1",
-  "private": true,
+  "description": "A React component that counts down to a given ISO 8601 date/time, counts up from a given ISO 8601 date/time or counts down then counts up after the count down completes.",
+  "version": "1.0.8",
   "scripts": {
     "build": "rollup -c",
     "format": "prettier --write \"**/*.+(ts|tsx|md|yml|json)\"",
     "watch": "rollup -cw",
-    "test": "jest",
     "cz": "git-cz",
-    "lint": "eslint ./src --ext .jsx,.ts --ignore-pattern *.test.ts"
+    "lint": "eslint ./src --ext .jsx,.ts --ignore-pattern *.test.ts",
+    "test:watch": "jest --watchAll",
+    "clean": "rm -rf lib coverage",
+    "coverage": "jest --coverage",
+    "test": "npm run lint && npm run coverage",
+    "prepublish": "yarn run clean && yarn test && yarn build"
   },
   "main": "lib/index.js",
   "module": "lib/index.es.js",
@@ -17,12 +20,23 @@
   "files": [
     "lib"
   ],
+  "author": {
+    "name": "Joshua Dyck",
+    "email": "josh.dyck@inlightmedia.ca"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "keywords": [],
-  "contributors": [],
+  "keywords": [
+    "react",
+    "countdown",
+    "timer",
+    "clock",
+    "typescript"
+  ],
+  "contributors": ["Joshua Dyck"],
   "repository": {
+    "type": "git",
     "url": "https://github.com/inlightmedia/react-countdown-timer"
   },
   "license": "MIT",
