@@ -1,6 +1,6 @@
 # React Countdown Timer
 
-![demo-image](./README-DEMO.gif)
+![demo-image](https://github.com/inlightmedia/react-countdown-timer/blob/master/README-DEMO.gif)
 
 ## Install
 
@@ -43,7 +43,7 @@ Just pass in a dateTime prop with an ISO 8601 formatted time string and you'll g
 
 The same component as above but with some different options:
 
-![options-demo-image](./README-OPTIONS-DEMO.gif)
+![options-demo-image](https://github.com/inlightmedia/react-countdown-timer/raw/master/README-OPTIONS-DEMO.gif)
 
 ## License
 

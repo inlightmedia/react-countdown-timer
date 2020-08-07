@@ -1,7 +1,5 @@
-/* eslint-disable no-console */
-import React, { useState, useEffect } from 'react';
-// eslint-disable-next-line no-unused-vars
-import moment, { Moment } from 'moment'
+import moment, { Moment } from "moment-mini";
+import React, { useEffect, useState } from "react";
 
 interface ComponentProps {
   shouldSwitchToTimerAfterCountdown?: boolean;
@@ -13,13 +11,13 @@ interface ComponentProps {
   style?: object;
 }
 
-const CountDownUp: React.FunctionComponent<ComponentProps> = ({ 
+const CountDownUp: React.FunctionComponent<ComponentProps> = ({
   shouldSwitchToTimerAfterCountdown = true,
   dateTime,
-  timerTextColor = 'red',
+  timerTextColor = "red",
   shouldShowTimeUnits = false,
-  shouldShowSeparator=true,
-  shouldHidePrecedingZeros=false,
+  shouldShowSeparator = true,
+  shouldHidePrecedingZeros = false,
   style,
 }) => {
   const [year, setYear] = useState<number>();
@@ -32,18 +30,18 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
 
   useEffect(() => {
     const ISO8601RegEx = /(\d{4})-(0[1-9]|1[0-2]|[1-9])-(\3([12]\d|0[1-9]|3[01])|[1-9])[tT\s]([01]\d|2[0-3]):(([0-5]\d)|\d):(([0-5]\d)|\d)([.,]\d+)?([zZ]|([+-])([01]\d|2[0-3]|\d):(([0-5]\d)|\d))$/;
-    
+
     if (ISO8601RegEx.test(dateTime)) {
       if (moment(dateTime).isValid()) {
         setCountDownTime(moment(dateTime));
       } else {
-        console.error('Error: Expected valid date. The date supplied conforms to ISO 8601 but is not a real date.')
+        console.error("Error: Expected valid date. The date supplied conforms to ISO 8601 but is not a real date.")
       }
     } else {
       console.error('Error: Expected ISO8601 formatted string. See this example: 2020-07-25T21:22:19Z. For more information on ISO8601 read:  ')
     }
   }, [])
-  
+
   const clockInterval = setInterval(() => {
     if (countDownTime) {
       const yearsLeft = countDownTime.diff(moment(), 'years');
@@ -51,7 +49,7 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
       const hoursLeft = countDownTime.diff(moment(), 'hours') % 24;
       const minutesLeft = countDownTime.diff(moment(), 'minutes') % 60;
       const secondsLeft = countDownTime.diff(moment(), 'seconds') % 60;
-      
+
       setYear((yearsLeft < 0 ? yearsLeft * -1 : yearsLeft))
       setHour((hoursLeft < 0 ? hoursLeft * -1 : hoursLeft))
       setDay((daysLeft < 0 ? daysLeft * -1 : daysLeft))
@@ -60,7 +58,7 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
       setCountDownTimeElapsed(secondsLeft < 0 || minutesLeft < 0 || hoursLeft < 0);
     }
   }, 1000);
-  
+
   if (!shouldSwitchToTimerAfterCountdown && countDownTime && countDownTime.isAfter(moment())) {
     clearInterval(clockInterval);
   }
@@ -71,30 +69,29 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
         hour !== undefined &&
         minute !== undefined &&
         second !== undefined &&
-        <p 
-          className="main" 
-          style={{ 
+        <p
+          className="main"
+          style={{
             color: countDownTimeElapsed ? timerTextColor : 'white',
             ...style
           }}
         >
           {
-            (year && year > 0) 
-              ? `${year}${shouldShowTimeUnits ? 'y' : ''}${ shouldShowSeparator ? ':' : ' '}` 
-              : '' 
+            (year && year > 0)
+              ? `${year}${shouldShowTimeUnits ? 'y' : ''}${ shouldShowSeparator ? ':' : ' '}`
+              : ''
           }
           {
-            (day && day > 0 && day < 100 && !shouldHidePrecedingZeros) 
+            (day && day > 0 && day < 100 && !shouldHidePrecedingZeros)
               ? (
-                day && day < 10 && !shouldHidePrecedingZeros 
-                  ? `00${day}${shouldShowTimeUnits ? 'd' : ''}${ shouldShowSeparator ? ':' : ' '}` 
+                day && day < 10 && !shouldHidePrecedingZeros
+                  ? `00${day}${shouldShowTimeUnits ? 'd' : ''}${ shouldShowSeparator ? ':' : ' '}`
                   : `0${day}${day && shouldShowTimeUnits ? 'd' : ''}${ shouldShowSeparator ? ':' : ' '}`
-              ) 
+              )
               : (
-                day 
-                  ? `${day}${shouldShowTimeUnits ? 'd' : ''}${ day && shouldShowSeparator ? ':' : ' '}` 
-                  : '' 
-              
+                day
+                  ? `${day}${shouldShowTimeUnits ? 'd' : ''}${ day && shouldShowSeparator ? ':' : ' '}`
+                  : ''
               )
           }
           {
@@ -104,15 +101,15 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
           }
           { shouldShowSeparator ? ':' : ' '}
           {
-            minute && minute < 10 && !shouldHidePrecedingZeros 
+            minute && minute < 10 && !shouldHidePrecedingZeros
               ? `0${minute}${shouldShowTimeUnits ? 'm' : ''}`
               : `${minute}${shouldShowTimeUnits ? 'm' : ''}`
           }
           { shouldShowSeparator ? ':' : ' '}
           {
             second && second < 10 && !shouldHidePrecedingZeros
-              ? `0${second}${shouldShowTimeUnits ? 's' : ''}` 
-              : `${second}${shouldShowTimeUnits ? 's' : ''}` 
+              ? `0${second}${shouldShowTimeUnits ? 's' : ''}`
+              : `${second}${shouldShowTimeUnits ? 's' : ''}`
           }
         </p>
       }

@@ -1,3 +1,4 @@
+# Logs
 *.log
 npm-debug.log*
 yarn-error.log
@@ -9,13 +10,15 @@ coverage
 # Dependency directories
 node_modules
 
-# npm package lock
+# Package Lock Files
 package-lock.json
 yarn.lock
 
-# project files
+# Project Files
 src
 test
+src/
+test/
 examples
 CHANGELOG.md
 .travis.yml
@@ -24,12 +27,22 @@ CHANGELOG.md
 .eslintrc
 .babelrc
 .gitignore
+.babelrc
+babel.config.js
+.npmignore
+CONTRIBUTING.md
+.eslintrc
+.eslintrc.js
+jest.config.js
+/lib
+rollup.config.js
+setup.ts
+tsconfig.json
+tsconfig.jest.json
+/coverage
+CODE_OF_CONDUCT.md
+.github
 
-
-# lock files
-package-lock.json
-yarn.lock
-
-# others
+# Others
 .DS_Store
 .idea

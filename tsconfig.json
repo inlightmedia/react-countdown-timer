@@ -1,44 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es2018",
-    "module": "commonjs",
-    "lib": ["dom", "dom.iterable", "es5", "es6", "es2015", "es2016", "es2017", "es2018", "esnext"],
+    "outDir": "./lib",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "module": "esnext",
+    "jsx": "react",
+    "skipLibCheck": true,
+    "lib": [
+      "dom",
+      "es6"
+    ],
     "declaration": true,
     "sourceMap": true,
-    "outDir": "./dist",
-    "removeComments": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "rootDirs": ["./", "./src"],
-    "typeRoots": ["./types", "./@types", "node_modules/@types"],
-    "types": ["node", "jest", "webpack-env"],
     "esModuleInterop": true,
-    "preserveConstEnums": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "jsx": "react"
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules", "**/__tests__/*", "coverage", "examples", "dist", "examples/dist/*.*"],
-  "include": [
-    "src/**/*.*",
-    "config/**/*.*",
-    "examples/*.tsx", 
-    "examples/*.ts", 
-    "./*.ts"
+  "exclude": [
+    "node_modules"
+  ],
+  "includes": [
+    "./src",
+    "./__tests__"
   ]
 }
-  

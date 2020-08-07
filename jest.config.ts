@@ -14,17 +14,16 @@ module.exports = {
   modulePaths: [
     './src'
   ],
+  moduleDirectories: ["node_modules", "src"],
   setupFiles: [
     '<rootDir>/config/jest/setup.ts'
   ],
   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
   testMatch: [ "**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)" ],
   transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
-    '^.+\\.css$': '<rootDir>/config/jest/cssTransform.ts',
-    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '<rootDir>/config/jest/fileTransform.ts'
+    '^.+\.tsx?$': 'ts-jest',
   },
-  transformIgnorePatterns: [
-    '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$'
-  ],
-}
+  roots: ["."],
+  verbose: true,
+  bail: true,
+};
