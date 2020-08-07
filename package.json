@@ -34,13 +34,16 @@
     "clock",
     "typescript"
   ],
-  "contributors": ["Joshua Dyck"],
+  "contributors": [
+    "Joshua Dyck"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/inlightmedia/react-countdown-timer"
   },
   "license": "MIT",
   "dependencies": {
+    "eslint": "^7.6.0",
     "moment-mini": "^2.24.0"
   },
   "devDependencies": {
