@@ -34,6 +34,7 @@ module.exports = {
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       "no-multiple-empty-lines": ["error", { "max": 2 }],
+      'indent': 'off',
       "no-console": 0
   },
   settings: {

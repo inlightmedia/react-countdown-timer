@@ -40,7 +40,7 @@ Just pass in a dateTime prop with an ISO 8601 formatted time string and you'll g
 | shouldShowSeparator                 | If true, this will show the colon between time units. If false, a space will be used                             | true     | boolean  |
 | shouldHidePrecedingZeros            | If true, seconds, minutes, hours, and days will show preceding zeros (e.g. 003:02:02:05)                         | true     | boolean  |
 | style                               | A style object can be passed in for inline css styles to be applied to the time text paragraph tag               | {}       | object   |
-| onCountdownCompletion               | A callback function that will be called once when the countdown completes                                        | ()=>void | function |
+| onCountdownCompletion               | A callback function that will be called once when the countdown completes                                        | ()=>null | ()=>void |
 
 The same component as above but with some different options:
 
