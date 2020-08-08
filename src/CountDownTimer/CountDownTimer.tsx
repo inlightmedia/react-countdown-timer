@@ -8,6 +8,7 @@ interface ComponentProps {
   shouldShowTimeUnits?: boolean;
   shouldShowSeparator?: boolean;
   shouldHidePrecedingZeros?: boolean;
+  onCountdownCompletion?: (any?) => any;
   style?: object;
 }
 
@@ -18,6 +19,7 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
   shouldShowTimeUnits = false,
   shouldShowSeparator = true,
   shouldHidePrecedingZeros = false,
+  onCountdownCompletion = () => null,
   style,
 }) => {
   const [year, setYear] = useState<number>();
@@ -27,6 +29,7 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
   const [second, setSecond] = useState<number>();
   const [countDownTime, setCountDownTime] = useState<Moment>();
   const [countDownTimeElapsed, setCountDownTimeElapsed] = useState<boolean>(false);
+  const [hasCallbackBeenCalled, setHasCallbackBeenCalled] = useState<boolean>(false);
 
   useEffect(() => {
     const ISO8601RegEx = /(\d{4})-(0[1-9]|1[0-2]|[1-9])-(\3([12]\d|0[1-9]|3[01])|[1-9])[tT\s]([01]\d|2[0-3]):(([0-5]\d)|\d):(([0-5]\d)|\d)([.,]\d+)?([zZ]|([+-])([01]\d|2[0-3]|\d):(([0-5]\d)|\d))$/;
@@ -61,6 +64,11 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
 
   if (!shouldSwitchToTimerAfterCountdown && countDownTime && countDownTime.isAfter(moment())) {
     clearInterval(clockInterval);
+  }
+  
+  if (countDownTimeElapsed && !hasCallbackBeenCalled) {
+    onCountdownCompletion();
+    setHasCallbackBeenCalled(true);
   }
 
   return (
