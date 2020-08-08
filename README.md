@@ -32,14 +32,15 @@ Just pass in a dateTime prop with an ISO 8601 formatted time string and you'll g
 
 ## Optional Properties
 
-| Option                              | Description                                                                                                      | Default | Type    |
-|-------------------------------------|------------------------------------------------------------------------------------------------------------------|---------|---------|
-| shouldSwitchToTimerAfterCountdown   | If true, the counter will turn into a count-up timer when the count-down reaches zero                            | true    | boolean |
-| timerTextColor                      | Colour with which to display the count-up timer text                                                             | 'red'   | string  |
-| shouldShowTimeUnits                 | If true, this will show a letter representing the time unit after its respective number (e.g. 55m or 10h or 55s) | false   | boolean |
-| shouldShowSeparator                 | If true, this will show the colon between time units. If false, a space will be used                             | true    | boolean |
-| shouldHidePrecedingZeros            | If true, seconds, minutes, hours, and days will show preceding zeros (e.g. 003:02:02:05)                         | true    | boolean |
-| style                               | A style object can be passed in for inline css styles to be applied to the time text paragraph tag               | {}      | object  |
+| Option                              | Description                                                                                                      | Default  | Type     |
+|-------------------------------------|------------------------------------------------------------------------------------------------------------------|----------|----------|
+| shouldSwitchToTimerAfterCountdown   | If true, the counter will turn into a count-up timer when the count-down reaches zero                            | true     | boolean  |
+| timerTextColor                      | Colour with which to display the count-up timer text                                                             | 'red'    | string   |
+| shouldShowTimeUnits                 | If true, this will show a letter representing the time unit after its respective number (e.g. 55m or 10h or 55s) | false    | boolean  |
+| shouldShowSeparator                 | If true, this will show the colon between time units. If false, a space will be used                             | true     | boolean  |
+| shouldHidePrecedingZeros            | If true, seconds, minutes, hours, and days will show preceding zeros (e.g. 003:02:02:05)                         | true     | boolean  |
+| style                               | A style object can be passed in for inline css styles to be applied to the time text paragraph tag               | {}       | object   |
+| onCountdownCompletion               | A callback function that will be called once when the countdown completes                                        | ()=>void | function |
 
 The same component as above but with some different options:
 
