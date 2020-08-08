@@ -1,3 +1,7 @@
+const {
+  defaults
+} = require("jest-config");
+
 module.exports = {
   coverageReporters: [
     'json',

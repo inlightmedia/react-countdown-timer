@@ -1,25 +1,20 @@
 import pkg from "./package.json";
 import commonjs from "rollup-plugin-commonjs";
 import progress from "rollup-plugin-progress";
-import babel from "rollup-plugin-babel";
+import babel from "@rollup/plugin-babel";
 import {
   terser
 } from "rollup-plugin-terser";
 import cleanup from "rollup-plugin-cleanup";
 import del from "rollup-plugin-delete";
-import typescript from "rollup-plugin-typescript2";
+import typescript from "@rollup/plugin-typescript";
 
 export default {
   input: "./src/index.ts",
   output: [{ 
-    file: pkg.main, 
+    dir: "lib",
     format: "cjs", 
     exports: 'auto' 
-  }, 
-  { 
-    file: pkg.module, 
-    format: "es", 
-    exports: 'auto'
   }],
   plugins: [
     progress({
@@ -36,11 +31,7 @@ export default {
     commonjs({
       namedExports: {}
     }),
-    typescript({
-      tsconfigOverride: {
-        exclude: ["./__tests__"]
-      }
-    }),
+    typescript(),
     terser(),
     cleanup()
   ],

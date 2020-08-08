@@ -69,6 +69,9 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
         hour !== undefined &&
         minute !== undefined &&
         second !== undefined &&
+        hour !== null &&
+        minute !== null &&
+        second !== null &&
         <p
           className="main"
           style={{
@@ -77,37 +80,37 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
           }}
         >
           {
-            (year && year > 0)
+            (year !== undefined && year !== null && year > 0)
               ? `${year}${shouldShowTimeUnits ? 'y' : ''}${ shouldShowSeparator ? ':' : ' '}`
               : ''
           }
           {
-            (day && day > 0 && day < 100 && !shouldHidePrecedingZeros)
+            (day !== undefined && day !== null && day > 0 && day < 100 && !shouldHidePrecedingZeros)
               ? (
-                day && day < 10 && !shouldHidePrecedingZeros
+                day !== undefined && day !== null && day < 10 && !shouldHidePrecedingZeros
                   ? `00${day}${shouldShowTimeUnits ? 'd' : ''}${ shouldShowSeparator ? ':' : ' '}`
                   : `0${day}${day && shouldShowTimeUnits ? 'd' : ''}${ shouldShowSeparator ? ':' : ' '}`
               )
               : (
-                day
+                day !== undefined && day !== null && day > 0
                   ? `${day}${shouldShowTimeUnits ? 'd' : ''}${ day && shouldShowSeparator ? ':' : ' '}`
                   : ''
               )
           }
           {
-            hour && hour < 10 && !shouldHidePrecedingZeros
+            hour < 10 && !shouldHidePrecedingZeros
               ? `0${hour}${shouldShowTimeUnits ? 'h' : ''}`
               : `${hour}${shouldShowTimeUnits ? 'h' : ''}`
           }
           { shouldShowSeparator ? ':' : ' '}
           {
-            minute && minute < 10 && !shouldHidePrecedingZeros
+            minute < 10 && !shouldHidePrecedingZeros
               ? `0${minute}${shouldShowTimeUnits ? 'm' : ''}`
               : `${minute}${shouldShowTimeUnits ? 'm' : ''}`
           }
           { shouldShowSeparator ? ':' : ' '}
           {
-            second && second < 10 && !shouldHidePrecedingZeros
+            second < 10 && !shouldHidePrecedingZeros
               ? `0${second}${shouldShowTimeUnits ? 's' : ''}`
               : `${second}${shouldShowTimeUnits ? 's' : ''}`
           }

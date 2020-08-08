@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./lib",
+    "removeComments": true,
     "target": "esnext",
     "moduleResolution": "node",
     "module": "esnext",
@@ -13,13 +14,30 @@
     "declaration": true,
     "sourceMap": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "rootDirs": ["./", "./src"],
+    "typeRoots": ["./types", "./@types", "node_modules/@types"],
+    "types": ["node", "jest"],
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
   },
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules", "**/__tests__/*", "coverage", "lib"],
   "includes": [
-    "./src",
+    "./src/**/*.*",
     "./__tests__"
-  ]
+  ],
 }
