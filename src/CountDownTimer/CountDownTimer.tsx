@@ -8,7 +8,7 @@ interface ComponentProps {
   shouldShowTimeUnits?: boolean;
   shouldShowSeparator?: boolean;
   shouldHidePrecedingZeros?: boolean;
-  onCountdownCompletion?: (any?) => any;
+  onCountdownCompletion?: () => void;
   style?: object;
 }
 
