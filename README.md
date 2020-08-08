@@ -23,7 +23,7 @@ Just pass in a dateTime prop with an ISO 8601 formatted time string and you'll g
 > This format uses: `<year>-<month>-<day>T<hour>:<minute>:<second><offset>`
 >
 > Offset is the relative time difference from UTC/GMT. The vast majority of time, using Z, which means zero offset is a safe and easy choice with this component.
-> 
+>
 > For Example:
 >
 > 2020-07-25T21:22:19Z (with zero offset from UTC - recommended for most use cases)
