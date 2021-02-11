@@ -43,6 +43,10 @@ const CountDownUp: React.FunctionComponent<ComponentProps> = ({
     } else {
       console.error('Error: Expected ISO8601 formatted string. See this example: 2020-07-25T21:22:19Z. For more information on ISO8601 read:  ')
     }
+
+    return (() => {
+      clearInterval(clockInterval);
+    });
   }, [])
 
   const clockInterval = setInterval(() => {
