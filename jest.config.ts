@@ -19,10 +19,10 @@ module.exports = {
     './src'
   ],
   moduleDirectories: ["node_modules", "src"],
-  setupFiles: [
-    '<rootDir>/config/jest/setup.ts'
+  setupFilesAfterEnv: [
+    "<rootDir>/config/jest/setup.ts",
+    "@testing-library/jest-dom/extend-expect"
   ],
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
   testMatch: [ "**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)" ],
   transform: {
     '^.+\.tsx?$': 'ts-jest',

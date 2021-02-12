@@ -1,1 +1,1 @@
-import '../../src/CountDownTimer/node_modules/@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect';

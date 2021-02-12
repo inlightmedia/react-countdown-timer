@@ -9,7 +9,7 @@ interface ComponentProps {
   shouldShowSeparator?: boolean;
   shouldHidePrecedingZeros?: boolean;
   onCountdownCompletion?: () => void;
-  style?: object;
+  style?: React.CSSProperties;
 }
 
 const CountDownUp: React.FunctionComponent<ComponentProps> = ({
